@@ -1,0 +1,6 @@
+_site
+Gemfile*
+.idea
+.sass-cache
+.jekyll-cache
+.DS_Store

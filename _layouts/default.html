@@ -1,0 +1,31 @@
+---
+title: default
+---
+<!doctype html>
+<html lang="en">  
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1>
+        <meta name="theme-color" content="#000000">
+        <link href="/assets/css/styles.css" rel="stylesheet">
+        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+        <title>{{ page.title }}</title>
+        <div class="container">
+            {% include navigation.html %}
+        </div>
+    </head>
+    
+    <body>
+        <div class="top-title">
+            <div class="container">
+                <h2 class="top-title-text">BC Medical Students Response Team</h2>
+            </div>
+        </div>
+        <div class="container">
+            {{ content }}
+
+            {% include footer.html %}
+        </div>
+    </body>
+
+</html>
