@@ -2,30 +2,35 @@
 title: default
 ---
 <!doctype html>
-<html lang="en">  
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1>
-        <meta name="theme-color" content="#000000">
-        <link href="/assets/css/styles.css" rel="stylesheet">
-        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-        <title>{{ page.title }}</title>
-        <div class="container">
-            {% include navigation.html %}
-        </div>
-    </head>
-    
-    <body>
-        <div class="top-title">
-            <div class="container">
-                <h2 class="top-title-text">BC Medical Students Response Team</h2>
-            </div>
-        </div>
-        <div class="container">
-            {{ content }}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
 
-            {% include footer.html %}
-        </div>
-    </body>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Leo Robinovitch">
+  <meta name="description" content="The BC COVID-19 Medical Student Response Team (MSRT) is a student-led, grassroots initiative with the primary objective of empowering medical students to support BC physicians and public health authorities in their efforts against COVID-19.">
+</head>
+
+<body>
+  <section>
+    {% include navigation.html %}
+  </section>
+<!--  <div class="container">-->
+<!--  </div>-->
+
+<!--  <div class="top-title">-->
+<!--    <div class="container">-->
+<!--      <h2 class="top-title-text">BC Medical Students Response Team</h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    {{ content }}-->
+
+<!--    {% include footer.html %}-->
+<!--  </div>-->
+</body>
 </html>
