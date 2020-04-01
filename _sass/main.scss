@@ -5,6 +5,12 @@ $mini-mobile-transition-width: 500px;
   display: none;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -404,6 +410,34 @@ a {
   }
 }
 
+.sign-up {
+  margin: 3rem auto;
+  width: 30%;
+  text-align: center;
+
+  p {
+    text-align: left;
+  }
+
+  input[type=submit] {
+    border: 1px solid #f44c0e;
+    color: #fff;
+    background: tomato;
+    border-radius: 3px;
+    padding: 12px 20px;
+  }
+  input[type=submit]:hover {
+    background: #f44c0e;
+  }
+
+  input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
 .home-posts {
   width: 100%;
   background: #00374f;
@@ -495,6 +529,18 @@ a {
 }
 
 footer {
+  display: flex;
+  justify-content: center;
+  background: lightgrey;
   margin: 0 auto;
-  max-width: 60%;
+  padding: 2rem;
+  border-top: 1px solid black;
+
+  .footer-content {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
