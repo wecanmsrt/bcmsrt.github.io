@@ -408,3 +408,57 @@ footer {
   margin: 0 auto;
   max-width: 60%;
 }
+
+.home-posts {
+  width: 100%;
+  background: #00374f;
+  color: lightgrey;
+
+  a {
+    color: unset;
+    font-style: normal;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    font-style: italic;
+  }
+
+  .home-posts-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+
+    h2 {
+      width: 30%;
+      text-align: center;
+      margin: 1em;
+      padding: 1em;
+    }
+
+    .post-previews {
+      width: 50%;
+      margin: 1em;
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0.3em;
+      }
+    }
+
+    .post-preview,
+    .read-more {
+      margin: 2em;
+    }
+
+    .read-more {
+      text-align: right;
+      font-size: 1.3em;
+    }
+
+  }
+}
