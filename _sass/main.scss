@@ -1,4 +1,4 @@
-$mobile-transition-width: 750px;
+$mobile-transition-width: 900px;
 $mini-mobile-transition-width: 500px;
 
 [hidden] {
@@ -404,11 +404,6 @@ a {
   }
 }
 
-footer {
-  margin: 0 auto;
-  max-width: 60%;
-}
-
 .home-posts {
   width: 100%;
   background: #00374f;
@@ -459,6 +454,47 @@ footer {
       text-align: right;
       font-size: 1.3em;
     }
-
   }
+}
+
+@media screen and (max-width: $mobile-transition-width) {
+  .home-posts {
+    .home-posts-content {
+      width: 70%;
+      justify-content: left;
+
+      h2 {
+        margin: 0.6em;
+        padding: 0;
+      }
+
+      .post-previews {
+        margin: 0;
+        width: 100%;
+      }
+
+      .post-preview {
+        margin: 2.5em 0.2em;
+        width: 100%;
+
+        &:first-child {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mini-mobile-transition-width) {
+  .home-posts {
+    .home-posts-content {
+      width: 90%;
+      justify-content: left;
+    }
+  }
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 60%;
 }
