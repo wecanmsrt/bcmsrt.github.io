@@ -35,6 +35,12 @@ $sign-up-width: 500px;
   display: none;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 // disable all flashing blue on click (active)
 * {
   -webkit-touch-callout: none;
@@ -539,11 +545,110 @@ h2.title-roboto-medium label {
     margin: 0;
   }
 
-  p {
-    color: black;
-    font-size: 1.2rem;
+  p,
+  input[type=submit] {
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    margin-bottom: 2.5rem;
   }
+
+  p {
+    margin-bottom: 2.5rem;
+    color: black;
+  }
+
+  input[type=submit] {
+    position: relative;
+    top: -4px;
+    color: #fff;
+    background: $dark-blue;
+    border-radius: 3px;
+    padding: 12px 20px;
+  }
+
+  input[type=submit]:hover {
+    background: $light-blue;
+    color: black;
+  }
+
+  input[type=text] {
+    padding: 5px 10px;
+    width: 60%;
+    margin-right: 12px;
+    font-size: 1.5rem;
+  }
+}
+
+footer {
+  background: $light-grey;
+  padding: 2rem 0 6rem;
+
+  .footer-content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    .footer-left {
+      width: 30%;
+
+      img {
+        max-width: 400px;
+      }
+
+      .footer-tag {
+        margin: 0 4rem;
+      }
+    }
+
+    .footer-links {
+      width: 40%;
+      display: flex;
+      justify-content: space-evenly;
+
+      p {
+        margin: 2rem 1rem;
+
+        a {
+          &:hover,
+          &:focus,
+          &:active {
+            color: $dark-blue;
+          }
+        }
+
+        &:last-child {
+          margin: 0 1rem;
+        }
+      }
+    }
+
+    .footer-social-media {
+      width: 30%;
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 2rem 2rem 0 1rem;
+
+        .social-media-icon {
+          width: 30px;
+          height: 30px;
+        }
+
+        //&:last-child {
+        //  margin-right: 10rem;
+        //}
+      }
+    }
+  }
+
 }
