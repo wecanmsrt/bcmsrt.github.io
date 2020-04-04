@@ -13,6 +13,7 @@ $container-width: 100 - 2 * $margin-width;
 $card-margin: 3rem;
 $card-margin-mobile: 1.5rem;
 $sign-up-width: 500px;
+$sign-up-width-mobile: 270px;
 
 @font-face {
   font-family: "San Francisco Medium";
@@ -367,6 +368,7 @@ header {
     @media screen and (max-width: $transition-width-mobile) {
       font-size: 1.5rem;
       line-height: 2rem;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -430,6 +432,10 @@ header {
         .card-icon {
           max-width: 40%;
           margin: 1rem 0 1rem 0rem;
+
+          @media screen and (max-width: $transition-width-large) {
+            max-width: 30%;
+          }
         }
 
         .card-info {
@@ -486,12 +492,33 @@ h2.title-roboto-medium label {
       flex-wrap: wrap;
       justify-content: space-between;
 
+      @media screen and (max-width: $transition-width-mobile) {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .post-preview {
         max-width: 30%;
+
+        @media screen and (max-width: $transition-width-mobile) {
+          max-width: 100%;
+          margin-top: 3rem;
+          display: flex;
+          align-items: center;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
 
         img {
           width: 200px;
           height: 200px;
+
+          @media screen and (max-width: $transition-width-large) {
+            width: 150px;
+            height: 150px;
+          }
         }
 
         h3,
@@ -513,6 +540,10 @@ h2.title-roboto-medium label {
     .read-more {
       display: flex;
       justify-content: flex-end;
+
+      @media screen and (max-width: $transition-width-mobile) {
+        justify-content: center;
+      }
 
       a {
         color: white;
@@ -540,6 +571,10 @@ h2.title-roboto-medium label {
   width: $sign-up-width;
   text-align: center;
 
+  @media screen and (max-width: $transition-width-mobile) {
+    width: $sign-up-width-mobile;
+  }
+
   h2 {
     color: $dark-blue;
     margin: 0;
@@ -564,6 +599,10 @@ h2.title-roboto-medium label {
     background: $dark-blue;
     border-radius: 3px;
     padding: 12px 20px;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      margin-top: 1rem;
+    }
   }
 
   input[type=submit]:hover {
@@ -576,12 +615,20 @@ h2.title-roboto-medium label {
     width: 60%;
     margin-right: 12px;
     font-size: 1.5rem;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      width: 90%;
+    }
   }
 }
 
 footer {
   background: $light-grey;
   padding: 2rem 0 6rem;
+
+  @media screen and (max-width: $transition-width-mobile) {
+    padding: 2rem 0 4rem;
+  }
 
   .footer-content {
     width: 90%;
@@ -594,15 +641,28 @@ footer {
     font-weight: 300;
     letter-spacing: 1px;
 
+    @media screen and (max-width: $transition-width-mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .footer-left {
       width: 30%;
 
       img {
         max-width: 400px;
+
+        @media screen and (max-width: $transition-width-large) {
+          max-width: 250px;
+        }
       }
 
       .footer-tag {
         margin: 0 4rem;
+      }
+
+      @media screen and (max-width: $transition-width-mobile) {
+        display: none;
       }
     }
 
@@ -610,6 +670,12 @@ footer {
       width: 40%;
       display: flex;
       justify-content: space-evenly;
+
+      @media screen and (max-width: $transition-width-mobile) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
 
       p {
         margin: 2rem 1rem;
@@ -633,6 +699,12 @@ footer {
       display: flex;
       justify-content: flex-end;
 
+      @media screen and (max-width: $transition-width-mobile) {
+        width: 100%;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
       a {
         display: block;
         width: 30px;
@@ -643,10 +715,6 @@ footer {
           width: 30px;
           height: 30px;
         }
-
-        //&:last-child {
-        //  margin-right: 10rem;
-        //}
       }
     }
   }
