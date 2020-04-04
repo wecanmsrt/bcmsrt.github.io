@@ -3,8 +3,8 @@ $light-blue: #66cccc;
 $ochre-yellow: #eea828;
 $light-grey: #efefef;
 
-$mobile-transition-width-1: 1500px;
-$mobile-transition-width-2: 1200px;
+$mobile-transition-width-1: 1700px;
+$mobile-transition-width-2: 1400px;
 $mobile-transition-width-3: 900px;
 $mobile-transition-width-4: 500px;
 
@@ -39,7 +39,7 @@ $mobile-transition-width-4: 500px;
 }
 
 .container {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -76,12 +76,12 @@ header {
 
     .blue-highlight {
       background-color: $dark-blue;
-      width: 15%;
+      width: 20%;
     }
 
     .orange-highlight {
       background-color: $ochre-yellow;
-      width: 85%;
+      width: 80%;
     }
   }
 
@@ -125,8 +125,13 @@ header {
           letter-spacing: 2.5px;
         }
 
-        @media screen and (max-width: $mobile-transition-width-2) {
+        @media screen and (max-width: $mobile-transition-width-3) {
           font-size: 1rem;
+          margin: 0;
+        }
+
+        @media screen and (max-width: $mobile-transition-width-4) {
+          font-size: 0.6rem;
           margin: 0;
         }
       }
@@ -143,8 +148,13 @@ header {
           width: 60px;
         }
 
-        @media screen and (max-width: $mobile-transition-width-2) {
+        @media screen and (max-width: $mobile-transition-width-3) {
+          width: 40px;
           margin: 0.5rem;
+        }
+
+        @media screen and (max-width: $mobile-transition-width-4) {
+          margin: 0.2rem;
         }
       }
 
@@ -164,8 +174,13 @@ header {
           letter-spacing: 2px;
         }
 
-        @media screen and (max-width: $mobile-transition-width-2) {
+        @media screen and (max-width: $mobile-transition-width-3) {
           font-size: 0.7rem;
+          margin: 0;
+        }
+
+        @media screen and (max-width: $mobile-transition-width-4) {
+          font-size: 0.5rem;
           margin: 0;
         }
       }
