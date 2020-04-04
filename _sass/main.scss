@@ -484,7 +484,7 @@ h2.title-roboto-medium label {
     .post-previews {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
 
       @media screen and (max-width: $transition-width-mobile) {
         flex-direction: column;
@@ -506,6 +506,8 @@ h2.title-roboto-medium label {
         }
 
         img {
+          display: block;
+          margin: 0 auto;
           height: 200px;
 
           @media screen and (max-width: $transition-width-large) {
