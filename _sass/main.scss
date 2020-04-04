@@ -69,6 +69,10 @@ a {
   width: $container-width;
   margin: 0 auto;
 
+  @media screen and (max-width: $transition-width-large) {
+    width: 80%;
+  }
+
   @media screen and (max-width: $transition-width-mobile) {
     width: 90%;
   }
@@ -390,7 +394,7 @@ header {
 
   .card-col {
     flex: 1 1 0px;
-    min-width: 400px;
+    min-width: 300px;
     margin: $card-margin/2;
 
     @media screen and (max-width: $transition-width-large) {
@@ -439,6 +443,7 @@ header {
         }
 
         .card-info {
+          width: 50%;
           margin: 1rem 2rem 1rem 0;
 
           h3 {
