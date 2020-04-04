@@ -42,17 +42,6 @@ input {
   appearance: none;
 }
 
-// disable all flashing blue on click (active)
-* {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
 body {
   font-size: 16px;
   margin: 0;
@@ -517,11 +506,9 @@ h2.title-roboto-medium label {
         }
 
         img {
-          width: 200px;
           height: 200px;
 
           @media screen and (max-width: $transition-width-large) {
-            width: 150px;
             height: 150px;
           }
         }
@@ -725,5 +712,42 @@ footer {
       }
     }
   }
+}
 
+.post {
+  h2, p {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    text-indent: 2rem;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 2rem;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 30%;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      max-width: 60%;
+    }
+  }
+
+  .post-tag {
+    margin: 2rem;
+    font-style: italic;
+
+    &:before {
+      content: "- "
+    }
+  }
 }
