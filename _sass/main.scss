@@ -731,15 +731,19 @@ footer {
 
 .post {
   h2, p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    line-height: 1.5rem;
     letter-spacing: 0.5px;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 
   p {
-    text-indent: 2rem;
+    text-indent: 2em;
   }
 
   h2 {
@@ -749,10 +753,11 @@ footer {
 
   img {
     display: block;
-    margin: 0 auto;
+    margin: 3rem auto;
     max-width: 30%;
 
     @media screen and (max-width: $transition-width-mobile) {
+      margin: 0 auto;
       max-width: 60%;
     }
   }
