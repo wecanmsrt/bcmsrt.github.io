@@ -1,4 +1,26 @@
-const projectDescriptions = [
+const currentProjects = [
+  {
+    name: "BCCH Healthy Minds Centre: Virtual Care Support",
+    location: "Remote Friendly",
+    status: "Active",
+    description: "The Healthy Minds Centre at BCCH would like to expand telemedicine to support patients across the province. Currently BCCH tech support is overwhelmed and cannot assist with this opportunity.",
+    studentRole: "To provide technical support for physicians using Powerchart and Zoom. Answer phone calls during scheduled times. Possible other roles could include the creation of FAQ documents and how to guides for these programs. Unpaid. Current plan is for one 4hour shift/week.",
+    numStudents: "5 students",
+    restrictions: "Years 3 and 4 only",
+    notes: " Prior PowerChart experience required, experience with zoom beneficial"
+  },
+
+  {
+    name: "Social Media Communications and Campaigns",
+    location: "Remote Friendly",
+    status: "Active",
+    description: "Synthesizing and managing content that is to be communicated through Twitter, Facebook, and Instagram accounts pertaining to the BC COVID-19 Medical Student Response team. Content will focus on highlighting various projects and identifying their current needs to attract community support and awareness. As well, reaching out to various news outlets to write about and promote projects that benefit from increased public awareness ex PPE donation. Currently we are recruiting for news media outreach and contact.",
+    studentRole: "Actively communicating with the other project leads within BC COVID-19 Medical Student Response efforts to remain updated and understand their needs. Collaborate with those leads as well as team members to synthesize Social media posts which highlight the needs of projects and disseminate information as necessary (e.g. infographics or videos produced by the media team). Collaborate with classmates and other groups who have important messages to share related to COVID-19 and discuss these with the team for possible dissemination.",
+    numStudents: "3 (2 more needed)",
+    restrictions: "None",
+    notes: "Preference will be given to those with previous communications roles or experience managing organizational social media accounts. Please indicate when applying if you have existing contacts working in news media as this would be helpful for specific positions!"
+  },
+
   {
     name: "Home-Made PPE Initiative",
     location: "Vancouver, BC",
@@ -21,25 +43,14 @@ const projectDescriptions = [
   },
 
   {
-    name: "Social Media Communications and Campaigns",
+    name: "COVID 3D Printing Rapid Needs Assessment, Validation, and Deployment Team",
     location: "Remote Friendly",
     status: "Active",
-    description: "Synthesizing and managing content that is to be communicated through Twitter, Facebook, and Instagram accounts pertaining to the BC COVID-19 Medical Student Response team. Content will focus on highlighting various projects and identifying their current needs to attract community support and awareness. As well, reaching out to various news outlets to write about and promote projects that benefit from increased public awareness ex PPE donation. Currently we are recruiting for news media outreach and contact.",
-    studentRole: "Actively communicating with the other project leads within BC COVID-19 Medical Student Response efforts to remain updated and understand their needs. Collaborate with those leads as well as team members to synthesize Social media posts which highlight the needs of projects and disseminate information as necessary (e.g. infographics or videos produced by the media team). Collaborate with classmates and other groups who have important messages to share related to COVID-19 and discuss these with the team for possible dissemination.",
-    numStudents: "3 (2 more needed)",
+    description: "Assessment Team - Performs needs assessments for and effectiveness of HCP driven or literature driven 3D printed solutions - 2 students needed In this role, for which students should have experience with CAD and ideally, a 3D printer. Students would work with clinical associates and independently to identify 3D printed solutions in literature and from HCP requests, to develop prototypes of such requests, and to pass these solutions on to the production team on a cycle of 3-4 days. All work will be done at home. This opportunity is not paid.\n\nDeployment team - 2 students needed. Responsible for coordinating delivery of HCP requests for printed solutions that have been pre-verified with the leadership team or with the Assessment team. Ideally, students will have leadership experience working between several organisations to provide final deliverables such as an event or a product. Will work with supply chain of 3D printers available to ensure timely delivery of solutions with good quality and good infection control. Guidance is provided during initial days on opportunity, and all work will be done at home. This opportunity is not paid.",
+    studentRole: "See above.",
+    numStudents: "2 students for each team (4 total).",
     restrictions: "None",
-    notes: "Preference will be given to those with previous communications roles or experience managing organizational social media accounts. Please indicate when applying if you have existing contacts working in news media as this would be helpful for specific positions!"
-  },
-
-  {
-    name: "BCCH Healthy Minds Centre: Virtual Care Support",
-    location: "Remote Friendly",
-    status: "Active",
-    description: "The Healthy Minds Centre at BCCH would like to expand telemedicine to support patients across the province. Currently BCCH tech support is overwhelmed and cannot assist with this opportunity.",
-    studentRole: "To provide technical support for physicians using Powerchart and Zoom. Answer phone calls during scheduled times. Possible other roles could include the creation of FAQ documents and how to guides for these programs. Unpaid. Current plan is for one 4hour shift/week.",
-    numStudents: "5 students",
-    restrictions: "Years 3 and 4 only",
-    notes: " Prior PowerChart experience required, experience with zoom beneficial"
+    notes: "Expected time commitment - Maximum 20hrs/wk."
   },
 
   {
@@ -54,6 +65,11 @@ const projectDescriptions = [
   },
 ]
 
+const futureProjects = []
+const sustainingProjects = []
+
+
+
 
 // do not change below
 function projectHtml(project) {
@@ -64,7 +80,7 @@ function projectHtml(project) {
   const projTableColsElem = document.createElement("div")
   projTableColsElem.classList += "project-table-cols"
 
-  const colNames = ["name", "location", "status"]
+  const colNames = ["name", "location"]
   colNames.forEach(
     (colName, idx) => {
       const projTableColElem = document.createElement("div")
@@ -129,5 +145,11 @@ function projectHtml(project) {
   return projElem
 }
 
-const projectTableContentElem = document.getElementById("projects-table-content")
-projectDescriptions.forEach(project => projectTableContentElem.appendChild(projectHtml(project)))
+const currentProjectsElem = document.getElementById("current-projects-content")
+currentProjects.forEach(project => currentProjectsElem.appendChild(projectHtml(project)))
+
+const futureProjectsElem = document.getElementById("future-projects-content")
+futureProjects.forEach(project => currentProjectsElem.appendChild(projectHtml(project)))
+
+const sustainingProjectsElem = document.getElementById("sustaining-projects-content")
+sustainingProjects.forEach(project => currentProjectsElem.appendChild(projectHtml(project)))

@@ -824,6 +824,13 @@ footer {
 
 .project-table {
   width: 100%;
+  margin-bottom: 3rem;
+
+  h1 {
+    @media screen and (max-width: $transition-width-mobile) {
+      font-size: 1.4rem;
+    }
+  }
 
   .project-table-cols {
     display: flex;
@@ -842,16 +849,11 @@ footer {
     }
 
     .pt-col-2 {
-      width: 25%;
-    }
-
-    .pt-col-3 {
-      width: 15%;
+      width: 30%;
     }
 
     .pt-col-1,
-    .pt-col-2,
-    .pt-col-3 {
+    .pt-col-2 {
       @media screen and (max-width: $transition-width-mobile) {
         width: 100%;
       }
@@ -897,7 +899,7 @@ footer {
       h1 {
         text-align: center;
         padding: 0.8em 0;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
     }
   }
@@ -939,6 +941,7 @@ footer {
       h1 {
         font-size: 1.3em;
         margin: 1em 0 0.2em;
+        font-weight: 400;
 
         @media screen and (max-width: $transition-width-mobile) {
           font-size: 1.3em;
