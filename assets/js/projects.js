@@ -41,6 +41,17 @@ const projectDescriptions = [
     restrictions: "Years 3 and 4 only",
     notes: " Prior PowerChart experience required, experience with zoom beneficial"
   },
+
+  {
+    name: "COVID 3D Printing Rapid Needs Assessment, Validation, and Deployment Team",
+    location: "Remote Friendly",
+    status: "Active",
+    description: "Assessment Team - Performs needs assessments for and effectiveness of HCP driven or literature driven 3D printed solutions - 2 students needed In this role, for which students should have experience with CAD and ideally, a 3D printer. Students would work with clinical associates and independently to identify 3D printed solutions in literature and from HCP requests, to develop prototypes of such requests, and to pass these solutions on to the production team on a cycle of 3-4 days. All work will be done at home. This opportunity is not paid.\n\nDeployment team - 2 students needed. Responsible for coordinating delivery of HCP requests for printed solutions that have been pre-verified with the leadership team or with the Assessment team. Ideally, students will have leadership experience working between several organisations to provide final deliverables such as an event or a product. Will work with supply chain of 3D printers available to ensure timely delivery of solutions with good quality and good infection control. Guidance is provided during initial days on opportunity, and all work will be done at home. This opportunity is not paid.",
+    studentRole: "See above.",
+    numStudents: "2 students for each team (4 total).",
+    restrictions: "None",
+    notes: "Expected time commitment - Maximum 20hrs/wk."
+  },
 ]
 
 
