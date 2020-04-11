@@ -55,12 +55,11 @@ input {
   appearance: none;
 }
 
-input[type=submit] {
+input[type=submit],
+input[type=button] {
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  position: relative;
-  top: -4px;
   color: #fff;
   background: $dark-blue;
   border-radius: 3px;
@@ -417,6 +416,7 @@ header {
 }
 
 .student-sign-up {
+  margin-bottom: 5rem;
   p {
     font-size: 1.2rem;
   }
@@ -426,11 +426,13 @@ header {
   display: flex;
   margin: 1em 0;
   justify-content: flex-start;
+  align-items: center;
 
   img {
+    width: 50px;
     margin: 0 2em;
   }
-  
+
   input {
     $padding-left-right: 4em;
     padding-left: $padding-left-right;
@@ -641,6 +643,11 @@ h2.title-roboto-medium label {
     width: $sign-up-width-mobile;
   }
 
+  input[type=submit] {
+    position: relative;
+    top: -4px;
+  }
+
   h2 {
     color: $dark-blue;
     margin: 0;
@@ -802,3 +809,88 @@ footer {
   }
 }
 
+.project-table {
+  width: 100%;
+
+  .project-table-cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .pt-col-1 {
+      width: 60%;
+    }
+
+    .pt-col-2 {
+      width: 25%;
+    }
+
+    .pt-col-3 {
+      width: 15%;
+    }
+  }
+
+  .project-table-header,
+  .project-table-content {
+    h1 {
+      padding: 0.8em 0;
+      margin: 0 1em;
+      font-size: 1.5rem;
+    }
+  }
+
+  .project-table-header {
+    background: $dark-blue;
+
+    h1 {
+      color: white;
+    }
+  }
+
+  .project-table-content {
+    margin-top: 5px;
+    background: $light-grey;
+
+    h1 {
+      color: black;
+    }
+
+    .pt-col-sub-header {
+      margin-top: 5px;
+    }
+
+    .pt-col-2 .pt-col-sub-header h1,
+    .pt-col-3 .pt-col-sub-header h1 {
+      font-weight: 300;
+    }
+
+    .project-info {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 0 3rem;
+
+      h1, p, ul {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+        margin: 1em 0 0.5em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      ul {
+        margin: 0.5em 0;
+        padding-left: 2em;
+      }
+
+    }
+  }
+}
