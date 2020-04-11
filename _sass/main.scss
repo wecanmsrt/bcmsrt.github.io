@@ -55,6 +55,38 @@ input {
   appearance: none;
 }
 
+input[type=submit] {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  position: relative;
+  top: -4px;
+  color: #fff;
+  background: $dark-blue;
+  border-radius: 3px;
+  padding: 12px 20px;
+
+  &:hover {
+    background: $light-blue;
+    color: black;
+  }
+
+  @media screen and (max-width: $transition-width-mobile) {
+    margin-top: 1rem;
+  }
+}
+
+input[type=text] {
+  padding: 5px 10px;
+  width: 60%;
+  margin-right: 12px;
+  font-size: 1.5rem;
+
+  @media screen and (max-width: $transition-width-mobile) {
+    width: 90%;
+  }
+}
+
 body {
   font-size: 16px;
   margin: 0;
@@ -140,7 +172,7 @@ header {
         margin: 1rem 0;
         font-size: 2.5rem;
         font-family: 'San Francisco Bold';
-        letter-spacing: 5.5px;
+        letter-spacing: 1px;
 
         @media screen and (max-width: $transition-width-largest) {
           font-size: 1.9rem;
@@ -345,7 +377,8 @@ header {
   }
 }
 
-.about-home {
+.page-title,
+.student-sign-up {
   width: 100% - $margin-width;
 
   @media screen and (max-width: $transition-width-mobile) {
@@ -365,7 +398,7 @@ header {
 
 
   p {
-    line-height: unset;
+    line-height: 1.5em;
     font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -376,6 +409,32 @@ header {
       line-height: 2rem;
       margin-bottom: 1rem;
     }
+  }
+
+  hr {
+    margin: 2rem 0;
+  }
+}
+
+.student-sign-up {
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.sign-up-form {
+  display: flex;
+  margin: 1em 0;
+  justify-content: flex-start;
+
+  img {
+    margin: 0 2em;
+  }
+  
+  input {
+    $padding-left-right: 4em;
+    padding-left: $padding-left-right;
+    padding-right: $padding-left-right;
   }
 }
 
@@ -572,7 +631,7 @@ h2.title-roboto-medium label {
   }
 }
 
-.sign-up {
+.email-sign-up {
   margin: 0 auto;
   padding: 5rem 0;
   width: $sign-up-width;
@@ -587,8 +646,7 @@ h2.title-roboto-medium label {
     margin: 0;
   }
 
-  p,
-  input[type=submit] {
+  p {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -599,34 +657,6 @@ h2.title-roboto-medium label {
     color: black;
   }
 
-  input[type=submit] {
-    position: relative;
-    top: -4px;
-    color: #fff;
-    background: $dark-blue;
-    border-radius: 3px;
-    padding: 12px 20px;
-
-    @media screen and (max-width: $transition-width-mobile) {
-      margin-top: 1rem;
-    }
-  }
-
-  input[type=submit]:hover {
-    background: $light-blue;
-    color: black;
-  }
-
-  input[type=text] {
-    padding: 5px 10px;
-    width: 60%;
-    margin-right: 12px;
-    font-size: 1.5rem;
-
-    @media screen and (max-width: $transition-width-mobile) {
-      width: 90%;
-    }
-  }
 }
 
 footer {
@@ -771,3 +801,4 @@ footer {
     }
   }
 }
+
