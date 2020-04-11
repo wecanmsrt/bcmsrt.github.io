@@ -417,6 +417,11 @@ header {
 
 .student-sign-up {
   margin-bottom: 5rem;
+
+  @media screen and (max-width: $transition-width-mobile) {
+    margin-bottom: 2rem;
+  }
+
   p {
     font-size: 1.2rem;
   }
@@ -431,12 +436,20 @@ header {
   img {
     width: 50px;
     margin: 0 2em;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      display: none;
+    }
   }
 
   input {
     $padding-left-right: 4em;
     padding-left: $padding-left-right;
     padding-right: $padding-left-right;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      width: 100%;
+    }
   }
 }
 
@@ -815,7 +828,14 @@ footer {
   .project-table-cols {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 1em;
+    }
 
     .pt-col-1 {
       width: 60%;
@@ -828,18 +848,33 @@ footer {
     .pt-col-3 {
       width: 15%;
     }
+
+    .pt-col-1,
+    .pt-col-2,
+    .pt-col-3 {
+      @media screen and (max-width: $transition-width-mobile) {
+        width: 100%;
+      }
+    }
   }
 
   .project-table-header,
+  .project-table-mobile-header,
   .project-table-content {
     h1 {
       padding: 0.8em 0;
       margin: 0 1em;
-      font-size: 1.5rem;
+      font-size: 1.5em;
+
+      @media screen and (max-width: $transition-width-mobile) {
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 
-  .project-table-header {
+  .project-table-header,
+  .project-table-mobile-header {
     background: $dark-blue;
 
     h1 {
@@ -847,9 +882,33 @@ footer {
     }
   }
 
+  .project-table-header {
+    @media screen and (max-width: $transition-width-mobile) {
+      display: none;
+    }
+  }
+
+  .project-table-mobile-header {
+    display: none;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      display: block;
+
+      h1 {
+        text-align: center;
+        padding: 0.8em 0;
+        font-size: 1.5em;
+      }
+    }
+  }
+
   .project-table-content {
     margin-top: 5px;
     background: $light-grey;
+
+    @media screen and (max-width: $transition-width-mobile) {
+      font-size: 0.8em;
+    }
 
     h1 {
       color: black;
@@ -867,7 +926,7 @@ footer {
     .project-info {
       width: 90%;
       margin: 0 auto;
-      padding: 0 0 3rem;
+      padding: 0 0 3em;
 
       h1, p, ul {
         font-family: 'Roboto', sans-serif;
@@ -878,8 +937,12 @@ footer {
       }
 
       h1 {
-        font-size: 1.3rem;
+        font-size: 1.3em;
         margin: 1em 0 0.5em;
+
+        @media screen and (max-width: $transition-width-mobile) {
+          font-size: 1.3em;
+        }
       }
 
       p {
