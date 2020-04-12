@@ -6,7 +6,7 @@ const currentProjects = [
     studentRole: "To provide technical support for physicians using Powerchart and Zoom. Answer phone calls during scheduled times. Possible other roles could include the creation of FAQ documents and how to guides for these programs. Unpaid. Current plan is for one 4hour shift/week.",
     numStudents: "5 students",
     restrictions: "Years 3 and 4 only",
-    notes: " Prior PowerChart experience required, experience with zoom beneficial"
+    notes: " Prior PowerChart experience required, experience with zoom beneficial."
   },
   {
     name: "Social Media Communications and Campaigns",
