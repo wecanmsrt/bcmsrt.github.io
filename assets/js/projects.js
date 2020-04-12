@@ -108,7 +108,7 @@ const sustainingProjects = [
 
 
 // do not change below
-function projectHtml(project) {
+function projectHtml(project, signUp=false) {
   const projElem = document.createElement("div")
   projElem.classList += "project"
   const projTableContentElem = document.createElement("div")
@@ -175,14 +175,28 @@ function projectHtml(project) {
     projectInfoElem.appendChild(sectionElem)
   })
 
+
   projElem.appendChild(projTableContentElem)
   projTableContentElem.appendChild(projTableColsElem)
   projTableContentElem.appendChild(projectInfoElem)
+
+  if (signUp) {
+    const signUpButtonContainerElem = document.createElement("div")
+    signUpButtonContainerElem.classList += "project-sign-up-btn"
+    const signUpButtonElem = document.createElement("input")
+    signUpButtonContainerElem.appendChild(signUpButtonElem)
+    signUpButtonElem.setAttribute("id", "email-submit-btn")
+    signUpButtonElem.setAttribute("type", "button")
+    signUpButtonElem.setAttribute("value", "Sign Up")
+    signUpButtonElem.addEventListener("onclick", () => window.open('https://forms.gle/HuHVxpsCuT1jLLvi8', '_blank'))
+    projectInfoElem.appendChild(signUpButtonContainerElem)
+  }
+
   return projElem
 }
 
 const currentProjectsElem = document.getElementById("current-projects-content")
-currentProjects.forEach(project => currentProjectsElem.appendChild(projectHtml(project)))
+currentProjects.forEach(project => currentProjectsElem.appendChild(projectHtml(project, signUp=true)))
 
 const futureProjectsElem = document.getElementById("future-projects-content")
 futureProjects.forEach(project => futureProjectsElem.appendChild(projectHtml(project)))
