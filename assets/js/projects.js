@@ -51,12 +51,12 @@ const currentProjects = [
 
   {
     name: "BCCDC Tuberculosis (TB) Services Administrative Support",
-    location: "655 W. 12th Avenue, Vancouver BC",
+    location: "Vancouver BC",
     description: "TB Services has taken on additional workload with respect to COVID and TB care. Unfortunately, this creates an additional administrative workload at a time where we are already stretched thin. Additional resources to help keep us above water are appreciated.",
     studentRole: "TB Clinic administrative support in terms of entry of client data/results into our Electronic Medical Record (EMR).",
     numStudents: "2-3",
     restrictions: "Year 3 or 4 preferred.",
-    notes: "Contact: William Turner, BCCDC, William.Turner@bccdc.ca, (604) 619-1433. Unpaid."
+    notes: "655 W. 12th Avenue. Contact: William Turner, BCCDC, William.Turner@bccdc.ca, (604) 619-1433. Unpaid."
   },
 ]
 
@@ -93,12 +93,12 @@ const sustainingProjects = [
   },
   {
     name: "Vancouver Coastal Health - Employee Test Result Calling",
-    location: "601 W Broadway, Vancouver, BC",
+    location: "Vancouver, BC",
     description: "With the rapid scale-up in healthcare practitioner testing for COVID-19, student volunteers are needed to communicate these results to HCPs in a timely and consistent manner. This helps streamline return-to-work and alleviates an administrative burden from HCPs who are needed elsewhere.",
     studentRole: "Work with a spreadsheet listing all healthcare practitioners who were tested for COVID-19 across Vancouver Coastal Health testing sites the previous day. Look up HCP test results in CareConnect and contact HCPs who tested negative to inform them of their results. Liaise with Occupational Health Nursing to close the loop on communication.",
     numStudents: "Currently at capacity with 10 Year 3 and 4 volunteers.",
     restrictions: "Year 3 or 4 only, CareConnect training required.",
-    notes: "Currently covering VGH, VCH community testing, RH, and some rural sites. Some sites may transition to texting. Expect student role to evolve over time. "
+    notes: "601 W Broadway. Currently covering VGH, VCH community testing, RH, and some rural sites. Some sites may transition to texting. Expect student role to evolve over time. "
   },
 
 
@@ -110,31 +110,49 @@ const sustainingProjects = [
 // do not change below
 function projectHtml(project, signUp=false) {
   const projElem = document.createElement("div")
-  projElem.classList += "project"
+  projElem.classList.add("project")
   const projTableContentElem = document.createElement("div")
-  projTableContentElem.classList += "project-table-content"
+  projTableContentElem.classList.add("project-table-content")
   const projTableColsElem = document.createElement("div")
-  projTableColsElem.classList += "project-table-cols"
+  projTableColsElem.classList.add("project-table-cols")
+  projTableColsElem.classList.add("collapsible")
 
   const colNames = ["name", "location"]
   colNames.forEach(
     (colName, idx) => {
       const projTableColElem = document.createElement("div")
-      projTableColElem.classList += `pt-col-${idx+1}`
+      projTableColElem.classList.add(`pt-col-${idx+1}`)
       const projTableSubHeaderElem = document.createElement("div")
-      projTableSubHeaderElem.classList += "pt-col-sub-header"
+      projTableSubHeaderElem.classList.add("pt-col-sub-header")
       const projTableSubHeaderTitleElem = document.createElement("h1")
       projTableSubHeaderTitleElem.innerText = project[colName]
 
       projTableSubHeaderElem.appendChild(projTableSubHeaderTitleElem)
       projTableColElem.appendChild(projTableSubHeaderElem)
       projTableColsElem.appendChild(projTableColElem)
+
+      // if first col, add collapsible image
+      if (idx === 0) {
+        const collapsibleIndicatorElem = document.createElement("div")
+        collapsibleIndicatorElem.classList.add("project-details")
+        const detailsTextElem = document.createElement("p")
+        detailsTextElem.classList.add("project-details-text")
+        detailsTextElem.innerText = "DETAILS"
+        const detailsIcon = document.createElement("img")
+        detailsIcon.setAttribute("src", "/assets/images/collapsible-icon.png")
+        detailsIcon.classList.add("project-details-icon")
+
+        collapsibleIndicatorElem.appendChild(detailsTextElem)
+        collapsibleIndicatorElem.appendChild(detailsIcon)
+        projTableColElem.appendChild(collapsibleIndicatorElem)
+      }
     }
   )
 
 
   const projectInfoElem = document.createElement("div")
-  projectInfoElem.classList += "project-info"
+  projectInfoElem.classList.add("project-info")
+  projectInfoElem.style.display = "none"
 
   const sections = [
     ["Description:", project.description],
@@ -182,7 +200,7 @@ function projectHtml(project, signUp=false) {
 
   if (signUp) {
     const signUpButtonContainerElem = document.createElement("div")
-    signUpButtonContainerElem.classList += "project-sign-up-btn"
+    signUpButtonContainerElem.classList.add("project-sign-up-btn")
     const signUpButtonElem = document.createElement("input")
     signUpButtonContainerElem.appendChild(signUpButtonElem)
     signUpButtonElem.setAttribute("id", "email-submit-btn")
@@ -203,3 +221,18 @@ futureProjects.forEach(project => futureProjectsElem.appendChild(projectHtml(pro
 
 const sustainingProjectsElem = document.getElementById("sustaining-projects-content")
 sustainingProjects.forEach(project => sustainingProjectsElem.appendChild(projectHtml(project)))
+
+// Collapsible projects
+const collapsibleElems = Array.from(document.getElementsByClassName("collapsible"))
+collapsibleElems.forEach(elem => {
+  elem.addEventListener("click", function() {
+    const content = this.nextElementSibling
+    const detailsIconElem = this.querySelector('.project-details-icon')
+    content.style.display = content.style.display == "block" ? "none" : "block"
+    detailsIconElem.style.transform = (
+      detailsIconElem.style.transform === "rotate(180deg)"
+      ? "rotate(0deg)"
+      : "rotate(180deg)"
+    )
+  })
+})
