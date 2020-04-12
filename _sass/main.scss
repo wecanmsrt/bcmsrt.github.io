@@ -109,6 +109,10 @@ a {
   @media screen and (max-width: $transition-width-mobile) {
     width: 90%;
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .inverted {
@@ -978,7 +982,7 @@ footer {
 }
 
 .support-forms {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

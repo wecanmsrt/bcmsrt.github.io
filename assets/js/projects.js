@@ -188,7 +188,7 @@ function projectHtml(project, signUp=false) {
     signUpButtonElem.setAttribute("id", "email-submit-btn")
     signUpButtonElem.setAttribute("type", "button")
     signUpButtonElem.setAttribute("value", "Sign Up")
-    signUpButtonElem.addEventListener("onclick", () => window.open('https://forms.gle/HuHVxpsCuT1jLLvi8', '_blank'))
+    signUpButtonElem.setAttribute("onclick", "window.open('https://forms.gle/HuHVxpsCuT1jLLvi8', '_blank')")
     projectInfoElem.appendChild(signUpButtonContainerElem)
   }
 
