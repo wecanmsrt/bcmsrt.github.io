@@ -107,17 +107,18 @@ const sustainingProjects = [
 
 
 
-// do not change below
+// do not edit below unless you know what you're doing
 function projectHtml(project, signUp=false) {
   const projElem = document.createElement("div")
   projElem.classList.add("project")
   const projTableContentElem = document.createElement("div")
   projTableContentElem.classList.add("project-table-content")
-  const projTableColsElem = document.createElement("div")
-  projTableColsElem.classList.add("project-table-cols")
+  const projTableColsElem = document.createElement("a")
   projTableColsElem.classList.add("collapsible")
 
   const colNames = ["name", "location"]
+  const textColumnsElem = document.createElement("div")
+  textColumnsElem.classList.add("project-table-cols")
   colNames.forEach(
     (colName, idx) => {
       const projTableColElem = document.createElement("div")
@@ -129,27 +130,31 @@ function projectHtml(project, signUp=false) {
 
       projTableSubHeaderElem.appendChild(projTableSubHeaderTitleElem)
       projTableColElem.appendChild(projTableSubHeaderElem)
-      projTableColsElem.appendChild(projTableColElem)
-
-      // if first col, add collapsible image
-      if (idx === 0) {
-        const collapsibleIndicatorElem = document.createElement("div")
-        collapsibleIndicatorElem.classList.add("project-details")
-        const detailsTextElem = document.createElement("p")
-        detailsTextElem.classList.add("project-details-text")
-        detailsTextElem.innerText = "DETAILS"
-        const detailsIcon = document.createElement("img")
-        detailsIcon.setAttribute("src", "/assets/images/collapsible-icon.png")
-        detailsIcon.classList.add("project-details-icon")
-
-        collapsibleIndicatorElem.appendChild(detailsTextElem)
-        collapsibleIndicatorElem.appendChild(detailsIcon)
-        projTableColElem.appendChild(collapsibleIndicatorElem)
-      }
+      textColumnsElem.appendChild(projTableColElem)
     }
   )
+  projTableColsElem.appendChild(textColumnsElem)
 
+  // collapsible details bar in project heading
+  const collapsibleIndicatorElem = document.createElement("div")
+  collapsibleIndicatorElem.classList.add("project-details")
+  const detailsTextElem = document.createElement("p")
+  detailsTextElem.classList.add("project-details-text")
+  detailsTextElem.innerText = "DETAILS"
+  const detailsIcon = document.createElement("img")
+  detailsIcon.setAttribute("src", "/assets/images/collapsible-icon.png")
+  detailsIcon.classList.add("project-details-icon")
 
+  collapsibleIndicatorElem.appendChild(detailsTextElem)
+  collapsibleIndicatorElem.appendChild(detailsIcon)
+  projTableColsElem.appendChild(collapsibleIndicatorElem)
+
+  // add hr below title
+  const hrElem = document.createElement("hr")
+  hrElem.style.display = "none"
+  projTableColsElem.appendChild(hrElem)
+
+  // add sections in project-info
   const projectInfoElem = document.createElement("div")
   projectInfoElem.classList.add("project-info")
   projectInfoElem.style.display = "none"
@@ -174,6 +179,7 @@ function projectHtml(project, signUp=false) {
       sectionContentElem = document.createElement("p")
       sectionContentElem.innerText = section[1]
     } else {
+      // project-info section contains a bulleted list
       sectionContentElem = document.createElement("div")
       const sectionContentDescriptionElem = document.createElement("p")
       sectionContentDescriptionElem.innerText = section[1].description
@@ -193,11 +199,11 @@ function projectHtml(project, signUp=false) {
     projectInfoElem.appendChild(sectionElem)
   })
 
-
   projElem.appendChild(projTableContentElem)
   projTableContentElem.appendChild(projTableColsElem)
   projTableContentElem.appendChild(projectInfoElem)
 
+  // add sign up button if recruiting
   if (signUp) {
     const signUpButtonContainerElem = document.createElement("div")
     signUpButtonContainerElem.classList.add("project-sign-up-btn")
@@ -222,17 +228,19 @@ futureProjects.forEach(project => futureProjectsElem.appendChild(projectHtml(pro
 const sustainingProjectsElem = document.getElementById("sustaining-projects-content")
 sustainingProjects.forEach(project => sustainingProjectsElem.appendChild(projectHtml(project)))
 
-// Collapsible projects
+// Collapsible projects event listeners
 const collapsibleElems = Array.from(document.getElementsByClassName("collapsible"))
 collapsibleElems.forEach(elem => {
   elem.addEventListener("click", function() {
     const content = this.nextElementSibling
     const detailsIconElem = this.querySelector('.project-details-icon')
+    const hrElem = this.querySelector("hr")
     content.style.display = content.style.display == "block" ? "none" : "block"
     detailsIconElem.style.transform = (
       detailsIconElem.style.transform === "rotate(180deg)"
       ? "rotate(0deg)"
       : "rotate(180deg)"
     )
+    hrElem.style.display = hrElem.style.display == "block" ? "none" : "block"
   })
 })
