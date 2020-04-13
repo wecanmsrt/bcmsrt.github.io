@@ -9,7 +9,7 @@ export const currentProjects = [
     notes: " Prior PowerChart experience required, experience with zoom beneficial."
   },
   {
-    name: "Social Media Communications and Campaigns",
+    name: "Social Media Communications and Campaigns!!!!!!",
     location: "Remote Friendly",
     description: "Synthesizing and managing content that is to be communicated through Twitter, Facebook, and Instagram accounts pertaining to the WE CAN COVID-19 Medical Student Response team. Content will focus on highlighting various projects and identifying their current needs to attract community support and awareness. As well, reaching out to various news outlets to write about and promote projects that benefit from increased public awareness ex PPE donation. Currently we are recruiting for news media outreach and contact.",
     studentRole: "Actively communicating with the other project leads within WE CAN COVID-19 Medical Student Response efforts to remain updated and understand their needs. Collaborate with those leads as well as team members to synthesize Social media posts which highlight the needs of projects and disseminate information as necessary (e.g. infographics or videos produced by the media team). Collaborate with classmates and other groups who have important messages to share related to COVID-19 and discuss these with the team for possible dissemination.",
